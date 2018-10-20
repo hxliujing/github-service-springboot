@@ -5,14 +5,11 @@
 package com.javens.springboot.dubbo.provider;
 
 import com.javens.springboot.dubbo.provider.service.UserService;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import java.math.BigDecimal;
 
 /**
  * @author liujing01
@@ -20,7 +17,7 @@ import java.math.BigDecimal;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
-public class ApplicationTest {
+public class TccTest {
     @Autowired
     UserService userService;
 
