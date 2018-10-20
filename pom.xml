@@ -9,6 +9,7 @@
         <module>github-spring-boot</module>
         <module>eureka-client</module>
         <module>eureka-server</module>
+        <module>dubbo-transaction</module>
     </modules>
 
     <dependencyManagement>

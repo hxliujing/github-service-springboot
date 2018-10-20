@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.javens.springboot.dubbo.provider.db.mapper.UserDOMapper">
+
+    <resultMap id="BaseResultMap" type="com.javens.springboot.dubbo.provider.db.dataobject.UserDO">
+                <id column="ID" property="id" jdbcType="INTEGER" javaType="Integer"/>
+
+                <result column="MONEY" property="money" jdbcType="DECIMAL"
+                        javaType="java.math.BigDecimal"/>
+
+                <result column="PASSWORD" property="password" jdbcType="VARCHAR"
+                        javaType="String"/>
+
+                <result column="USERNAME" property="username" jdbcType="VARCHAR"
+                        javaType="String"/>
+    </resultMap>
+
+
+    <sql id="Base_Column_List">
+        `ID`,`MONEY`,`PASSWORD`,`USERNAME`
+    </sql>
+
+
+        <!--insert:SP_USER-->
+        <insert id="insert" >
+                INSERT INTO SP_USER
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">`ID`,</if>
+            <if test="money != null">`MONEY`,</if>
+            <if test="password != null">`PASSWORD`,</if>
+            <if test="username != null">`USERNAME`,</if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id,jdbcType=INTEGER},</if>
+            <if test="money != null">#{money,jdbcType=DECIMAL},</if>
+            <if test="password != null">#{password,jdbcType=VARCHAR},</if>
+            <if test="username != null">#{username,jdbcType=VARCHAR},</if>
+        </trim>
+        </insert>
+
+        <!--根据用户ID获取信息-->
+        <select id="getById" resultType="com.javens.springboot.dubbo.provider.db.dataobject.UserDO">
+                SELECT /*MS-SP-USER-GETBYID*/  <include refid="Base_Column_List" /> FROM SP_USER WHERE ID = #{id,jdbcType=INTEGER}
+        </select>
+
+        <!--根据用户ID获取信息-->
+        <select id="getByIdForUpdate" resultType="com.javens.springboot.dubbo.provider.db.dataobject.UserDO">
+                SELECT /*MS-SP-USER-GETBYIDFORUPDATE*/  <include refid="Base_Column_List" /> FROM SP_USER WHERE ID = #{id,jdbcType=INTEGER} for update
+        </select>
+
+        <!--根据ID更新费率表信息-->
+        <update id="updateMoneyById" >
+                update /*MS-SP-USER-UPDATEMONEYBYID*/ SP_USER
+        <set>
+            <if test="money != null">
+                money = #{money,jdbcType=DECIMAL},
+            </if>
+            <if test="username != null">
+                username = #{username,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+        </update>
+</mapper>
