@@ -156,6 +156,11 @@ public class UserServiceImpl implements UserService {
         userDAO.updateMoneyById(userDO);
     }
 
+    @Override
+    public void m04invoketm() {
+        invoke_public_tmethod();
+    }
+
     @Transactional(rollbackFor = Exception.class)
     public void  invoke_public_tmethod(){
         UserDO userDO = new UserDO();

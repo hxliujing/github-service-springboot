@@ -71,4 +71,14 @@ public class TransactionTest {
     public void selectForUpdate(){
         userService.selectForUpdate();
     }
+
+    @Test
+    public void m04invoketmTest(){
+        userService.m04invoketm();
+    }
+
+    @Test
+    public void invoke_public_tmethodTest(){
+        userService.invoke_public_tmethod();
+    }
 }

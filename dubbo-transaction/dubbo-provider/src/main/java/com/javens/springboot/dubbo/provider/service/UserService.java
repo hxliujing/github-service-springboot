@@ -68,4 +68,11 @@ public interface UserService {
      * 行锁测试
      */
     void selectForUpdate();
+
+    /**
+     * 非事务方法调用事务方法
+     */
+    public void m04invoketm();
+
+    void invoke_public_tmethod();
 }
