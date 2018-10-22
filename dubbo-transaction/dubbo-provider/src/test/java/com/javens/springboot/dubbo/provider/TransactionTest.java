@@ -77,8 +77,21 @@ public class TransactionTest {
         userService.m04invoketm();
     }
 
-    @Test
+    /*@Test
     public void invoke_public_tmethodTest(){
         userService.invoke_public_tmethod();
+    }*/
+    @Test
+    public void handlerm05invoketmTest(){
+        userService.handlerm05invoketm();
+    }
+    @Test
+    public void handSelectForUpdateTest(){
+        userService.handSelectForUpdate();
+    }
+
+    @Test
+    public void tm06invoketm07Test(){
+        userService.tm06invoketm07();
     }
 }

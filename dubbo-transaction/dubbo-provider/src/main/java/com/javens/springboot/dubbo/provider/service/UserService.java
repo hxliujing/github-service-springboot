@@ -70,9 +70,23 @@ public interface UserService {
     void selectForUpdate();
 
     /**
+     * 手动测试行锁
+     */
+    void handSelectForUpdate();
+    /**
      * 非事务方法调用事务方法
      */
     public void m04invoketm();
 
-    void invoke_public_tmethod();
+    //void invoke_public_tmethod();
+
+    /**
+     * 手动事务调用
+     */
+    public void handlerm05invoketm();
+
+    /**
+     * 事务调用事务
+     */
+    public void tm06invoketm07();
 }
