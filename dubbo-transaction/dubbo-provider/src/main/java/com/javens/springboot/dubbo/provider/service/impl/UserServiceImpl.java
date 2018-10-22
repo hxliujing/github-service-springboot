@@ -162,9 +162,10 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void selectForUpdate() {
-        UserDO userDO = userDAO.getByIdForUpdate(1);
+        UserDO userDO = userDAO.getByIdForUpdate(16);
         userDO.setUsername("刘静1");
         userDAO.updateMoneyById(userDO);
+        handSelectForUpdate();
     }
 
     @Override

@@ -42,7 +42,9 @@ public class User2ServiceImpl implements User2Service {
     public void m07() {
         TransactionStatus transaction = transactionManager.getTransaction(new DefaultTransactionDefinition());
 
-        UserDO userDO = userDAO.getByIdForUpdate(5);
+        UserDO userDO = userDAO.getByIdForUpdate(6);
+        userDO.setUsername("李健-01");
+        Long result = userDAO.updateMoneyById(userDO);
         System.out.println(userDO.getId());
 
         transactionManager.commit(transaction);
