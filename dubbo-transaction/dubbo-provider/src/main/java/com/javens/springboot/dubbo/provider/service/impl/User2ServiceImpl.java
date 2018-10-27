@@ -40,14 +40,14 @@ public class User2ServiceImpl implements User2Service {
     //@Transactional(propagation= Propagation.REQUIRES_NEW)
     @Override
     public void m07() {
-        TransactionStatus transaction = transactionManager.getTransaction(new DefaultTransactionDefinition());
+        //TransactionStatus transaction = transactionManager.getTransaction(new DefaultTransactionDefinition());
 
-        UserDO userDO = userDAO.getByIdForUpdate(6);
-        userDO.setUsername("李健-01");
+        UserDO userDO = userDAO.getByIdForUpdate(5);
+        userDO.setUsername("李健-02");
         Long result = userDAO.updateMoneyById(userDO);
         System.out.println(userDO.getId());
 
-        transactionManager.commit(transaction);
+       // transactionManager.commit(transaction);
 
     }
 }

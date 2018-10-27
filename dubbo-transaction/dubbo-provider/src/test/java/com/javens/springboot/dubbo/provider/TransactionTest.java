@@ -73,6 +73,11 @@ public class TransactionTest {
     }
 
     @Test
+    public void selectForUpdate2(){
+        userService.selectForUpdate();
+    }
+
+    @Test
     public void m04invoketmTest(){
         userService.m04invoketm();
     }

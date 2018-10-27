@@ -46,7 +46,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void test() {
-        UserDO user = userDAO.getById(1);
+        UserDO user = userDAO.getById(16);
         log.info(user.toString());
     }
 
@@ -163,16 +163,17 @@ public class UserServiceImpl implements UserService {
     @Transactional(rollbackFor = Exception.class)
     public void selectForUpdate() {
         UserDO userDO = userDAO.getByIdForUpdate(16);
-        userDO.setUsername("刘静1");
+        userDO.setUsername("刘静4");
         userDAO.updateMoneyById(userDO);
-        handSelectForUpdate();
+      //  handSelectForUpdate();
     }
 
     @Override
     public void handSelectForUpdate() {
         TransactionStatus transaction = transactionManager.getTransaction(new DefaultTransactionDefinition());
-        UserDO userDO = userDAO.getByIdForUpdate(16);
-        selectUser(userDO.getId());
+        UserDO userDO = userDAO.getByIdForUpdate(1);
+        userDO.setUsername("123");
+        userDAO.updateMoneyById(userDO);
         transactionManager.commit(transaction);
     }
 
