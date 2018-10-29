@@ -18,13 +18,6 @@
     </properties>
     <dependencyManagement>
         <dependencies>
-            <!--<dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-actuator</artifactId>
-                <version>${spring.boot.actuator}</version>
-            </dependency>-->
-
-
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
