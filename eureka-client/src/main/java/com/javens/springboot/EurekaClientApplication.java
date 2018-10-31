@@ -30,29 +30,6 @@ import java.util.Set;
 @ComponentScan("com.javens.springboot.*")
 @RestController
 public class EurekaClientApplication {
-    @Autowired
-    private DiscoveryClient discoveryClient;
-    @Autowired
-    private RestTemplate restTemplate;
-
-    @RequestMapping("/hello")
-    public String serviceUrl(){
-        discoveryClient.getServices().stream().forEach(x->{
-            System.out.println(x);
-        });
-        return "Hello World";
-    }
-    @RequestMapping("/ribbon-consumer")
-    public String ribbonConsumer(){
-        return restTemplate.getForEntity("http://EUREKA-CLIENT/hello",
-                String.class) . getBody();
-    }
-
-
-    @RequestMapping("/")
-    public String home() {
-        return "Hello World";
-    }
 
     public static void main(String[] args) {
         SpringApplication.run(EurekaClientApplication.class, args);
