@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class HelloController {
-    /*@Autowired
-    private CounterService counterService;*/
 
     @RequestMapping("/")
     public String index() {
@@ -25,7 +23,6 @@ public class HelloController {
 
     @RequestMapping ("/hello")
     public String greet() {
-        //counterService.increment("didispace.hello.count");
-        return "";
+        return "greet";
     }
 }

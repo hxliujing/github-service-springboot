@@ -50,6 +50,16 @@ public class UserServiceImpl implements UserService {
         log.info(user.toString());
     }
 
+    @Override
+    public void insertId(){
+        UserDO userDO = new UserDO();
+        userDO.setMoney(BigDecimal.ONE);
+        userDO.setPassword(UUID.randomUUID().toString());
+        userDO.setUsername("GI-"+Thread.currentThread().getName());
+        Long i = userDAO.insert(userDO);
+        System.out.println("======>" + userDO.getId());
+    }
+
     /**
      * insert return 方式
      * @return
@@ -175,6 +185,18 @@ public class UserServiceImpl implements UserService {
         userDO.setUsername("123");
         userDAO.updateMoneyById(userDO);
         transactionManager.commit(transaction);
+    }
+    @Override
+    public void handSelectForUpdateSecond() {
+        TransactionStatus transaction = transactionManager.getTransaction(new DefaultTransactionDefinition());
+        UserDO userDO = userDAO.getByIdForUpdate(1);
+        userDO.setUsername("123456");
+        userDAO.updateMoneyById(userDO);
+        userDO = userDAO.getByIdForUpdate(1);
+        log.info(userDO.getUsername());
+        transactionManager.commit(transaction);
+
+
     }
 
     private void selectUser(Integer id) {

@@ -68,4 +68,14 @@ public class TccTest {
     public void selectForUpdate(){
         userService.selectForUpdate();
     }
+
+    @Test
+    public void handSelectForUpdateSecondTest(){
+        userService.handSelectForUpdateSecond();
+    }
+
+    @Test
+    public void insertIdTest(){
+        userService.insertId();
+    }
 }

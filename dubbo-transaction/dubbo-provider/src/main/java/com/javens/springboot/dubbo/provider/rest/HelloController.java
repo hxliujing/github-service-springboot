@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
     @RequestMapping("/")
     public String index() {
+        System.out.println("===================1===================");
+        System.out.println("===================2===================");
         return "Greetings from Spring Boot!";
     }
 }

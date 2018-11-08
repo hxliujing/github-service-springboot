@@ -13,7 +13,7 @@ public interface UserService {
 
     void enter();
     void test();
-
+    void insertId();
     /**
      * tm01_insert_return_true
      * @return
@@ -89,4 +89,7 @@ public interface UserService {
      * 事务调用事务
      */
     public void tm06invoketm07();
+
+
+    void handSelectForUpdateSecond();
 }

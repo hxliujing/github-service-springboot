@@ -31,6 +31,7 @@
         <mybatis.spring.version>1.3.1</mybatis.spring.version>
         <mysql.version>5.1.41</mysql.version>
         <hutool.version>4.0.12</hutool.version>
+        <fastjson.version>1.2.49</fastjson.version>
     </properties>
 
     <dependencyManagement>
@@ -116,6 +117,15 @@
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool.version}</version>
             </dependency>
+
+            <!-- fastjson -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+
         </dependencies>
     </dependencyManagement>
 </project>
