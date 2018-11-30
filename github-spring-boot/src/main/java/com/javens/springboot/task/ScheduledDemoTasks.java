@@ -5,6 +5,7 @@
 package com.javens.springboot.task;
 
 import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
 
 import java.util.concurrent.TimeUnit;
 
@@ -13,13 +14,15 @@ import java.util.concurrent.TimeUnit;
  * @author liujing01
  * @version ScheduledDemoTasks.java, v 0.1 2018-11-30 15:21 
  */
+@Component
 public class ScheduledDemoTasks {
 
     @Scheduled(fixedRate = 5000)
     public void task() throws InterruptedException {
         for(int i=0;i<1000;i++){
             System.out.println("[ScheduledDemoTasks] counter:"+ i);
-            TimeUnit.SECONDS.sleep(1);
+            TimeUnit.SECONDS.sleep(3);
+            System.out.println("[ScheduledDemoTasks] counter:"+ i + "End");
         }
 
     }
